@@ -12,3 +12,32 @@ my example
 #loading
 
 [loading](./loading/index.html)
+
+#navmenu
+
+[navmenu toggle](./navmenu/index.html)
+
+#shadow
+
+[css3 shadow](./shadow/index.html)
+
+#shadow2
+
+[css3 shadow2](./shadow/index.html)
+
+#shengbei
+
+[css shengbei](./shengbei/index.html)
+
+#superembed
+
+[superembed](./superembed/index.html)
+
+#takephoto
+
+[takephoto](./takephoto/index.html)
+
+#[typings]
+
+... 
+
