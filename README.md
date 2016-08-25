@@ -23,7 +23,7 @@ my example
 
 #shadow2
 
-[css3 shadow2](./shadow/index.html)
+[css3 shadow2](./shadow2/index.html)
 
 #shengbei
 
