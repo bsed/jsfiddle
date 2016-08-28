@@ -37,7 +37,9 @@ my example
 
 [takephoto](./takephoto/index.html)
 
-#[typings]
+#typings
 
-... 
+## taiji
+
+[css taiji ](./taiji/index.html)
 
