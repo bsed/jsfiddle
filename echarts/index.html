@@ -19,11 +19,13 @@
 		var echart_qyfb = echarts_ext.init('echart_qyfb');//初始化，传入ID
 		var comnewchart = echarts_ext.init('comnewchart');//初始化，传入ID
 		var carchart = echarts_ext.init('carchart');//初始化，传入ID
+
+		var urljson = "http://gnux.cn/jsfiddle/echarts/data.json";
 		$.ajax({
 	        type: "post",
 	        dataType: "json",
 	        async: false,
-	        url: "http://gnux.cn/jsfiddle/echarts/data.json",
+	        url: urljson,
 			success : function(json) {
 				echart_qyfb.setOption('企业分布情况', json.comfbchart, '圆形', 'json');
 				comnewchart.setOption('2013-06到2014-06企业变化情况', json.comnewchart, '柱形', 'json');
