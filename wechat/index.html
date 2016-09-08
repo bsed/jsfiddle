@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>last.html</title>
+<style>
+</style>
+<script type="text/javascript">
+    function show (obj)
+    {
+        var img = document.getElementById ("showimg");
+        if (img.src = obj.src)
+        {
+            img.src = "qrcode.jpg";
+        }
+        img.style.display = "";
+        img.style.position = "absolute";
+        img.style.left = obj.offsetleft + obj.width;
+    }
+    function hide ()
+    {
+        document.getElementById ("showimg").style.display = "none";
+    }
+</script>
+</head>
+<body>
+    <img src="wechat.jpg" onmouseover="show(this)" onmouseout="hide()" width=18 height=18>
+    <br>
+    <img src="qrcode.jpg" id="showimg" style="display: none" height=88>
+</body>
+</html>
