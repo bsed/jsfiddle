@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>jquery loading </title>
+    <script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="./js/json2html.js"></script>
+    <script type="text/javascript">
+    var progressElem = $('#main');
+    var URL = "https://api.github.com/users/mralexgray/repos";
+    $("#loading").hide();
+    progressElem.text(URL);
+    $.ajax({
+        type: 'GET',
+        dataType: 'json',
+        url: URL,
+        cache: false,
+        error: function(xhr, ajaxOptions, thrownError) {
+            alert(xhr.responseText);
+            alert(thrownError);
+        },
+        xhr: function() {
+            var xhr = new window.XMLHttpRequest();
+            //Download progress
+            xhr.addEventListener("progress", function(evt) {
+                if (evt.lengthComputable) {
+                    var percentComplete = evt.loaded / evt.total;
+                    progressElem.html(Math.round(percentComplete * 100) + "%");
+                }
+            }, false);
+            return xhr;
+        },
+        beforeSend: function() {
+            $('#loading').show();
+        },
+        complete: function() {
+            $("#loading").hide();
+        },
+        success: function(json) {
+            console.info(json);
+            /*for(var i=0,l=json.length;i<l;i++) {
+                for(var key in json[i]) {
+                    //alert(key+':'+json[i][key]);
+                     $("#data").html(json[i][key]);
+                }
+            }*/
+            var transform ={'tag':'li','html':'${id} ${name}  ${full_name} ${owner}'};
+            $("#data").html(json2html.transform(json,transform));
+        }
+    });
+    </script>
+</head>
+
+<body>
+    <div id="main"></div>
+    <br>
+    <div id="loading">Loading</div>
+    <br>
+    <div id="data">
+        
+    </div>
+</body>
+
+</html>

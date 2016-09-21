@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>侧边栏</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/screen.css">
+    <link rel="stylesheet" type="text/css" href="./css/sidebar.css">
+</head>
+
+<body class="nav-closed" youdao="bind" cz-shortcut-listen="true">
+    <div class="nav">
+        <h3 class="nav-title">Menu</h3>
+        <a href="#" class="nav-close">
+            <span class="hidden">Close</span>
+        </a>
+        <ul>
+            <li class="nav-home nav-current" role="presentation"><a href="./多栈开发.html">Home</a></li>
+            <li class="nav-home nav-current" role="presentation"><a href="./多栈开发.html">Home1</a></li>
+            <li class="nav-home nav-current" role="presentation"><a href="./多栈开发.html">Home2</a></li>
+        </ul>
+        <a class="subscribe-button icon-feed" href="rss/">Subscribe</a>
+    </div>
+    <span class="nav-cover"></span>
+    <div class="site-wrapper">
+        <header class="main-header " style="background-image: url(/content/images/2015/09/cover2-1.jpg)">
+            <nav class="main-nav overlay clearfix">
+                <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+            </nav>
+            <div class="vertical">
+                <div class="main-header-content inner">
+                    <h1 class="page-title">演示DEMO</h1>
+                    <h2 class="page-description">关注前端、Node.js、Native 等</h2>
+                </div>
+            </div>
+            <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+        </header>
+        <main id="content" class="content" role="main">
+            <div class="extra-pagination inner">
+                <nav class="pagination" role="navigation">
+                    <span class="page-number">Page 1 of 3</span>
+                    <a class="older-posts" href="page/2/">Older Posts →</a>
+                </nav>
+            </div>
+            <article class="post tag-shipit tag-node-js tag-npm tag-bu-shu">
+                <header class="post-header">
+                    <h2 class="post-title"><a href="node-ying-yong-bu-shu/">基于 shipit 的Node.js 应用部署方案</a></h2>
+                </header>
+                <section class="post-excerpt">
+                    <p>本文主要介绍如何基于shipit的自动化部署方案，可以支持测试环境、灰度上线、回滚等功能。 shipit介绍 shipit 是一个为 Node 应用部署开发的一个工具，主要有以下特色 全部使用 Javascript 开发 基于 orchestrator(gulp 核心组件) 开发的任务流程管理 官方提供核心部署流程支持 交互式 SSH 命令 非常容易扩展 安装以及基本用法，请看官方仓库 部署方案 <a class="read-more" href="node-ying-yong-bu-shu/">»</a></p>
+                </section>
+                <footer class="post-meta">
+                    <img class="author-thumb" src="http://www.gravatar.com/avatar/8ee493c6c288d18c24fd6994ccc969f0?s=250&amp;d=mm&amp;r=x" alt="mdemo" nopin="nopin">
+                    <a href="author/mdemo/">mdemo</a> on <a href="tag/shipit/">shipit</a>, <a href="tag/node-js/">node.js</a>, <a href="tag/npm/">npm</a>, <a href="tag/bu-shu/">部署</a>
+                    <time class="post-date" datetime="2015-11-15">15 November 2015</time>
+                </footer>
+            </article>
+            <article class="post tag-gulp tag-webpack tag-node-js tag-koa tag-css tag-react-js tag-css-modules tag-flux tag-redux-js featured">
+                <header class="post-header">
+                    <h2 class="post-title"><a href="wo-men-de-qian-duan-2015/">我们的前端技术2015--编码规范</a></h2>
+                </header>
+                <section class="post-excerpt">
+                    <p>1：编码规范 1.1 javascript 编码规范 编码规范的选择是件非常容易的事情，网上有非常多得选择，我们使用的是 airbnb 团队在 GitHub 维护的airbnb/javascript。 选择这个规范主要因为 它是目前 GitHub 上最有热度的规范，有恐怖的24000+个 star 支持 ES6 版本（我们现在的项目全面使用 ES6进行开发） <a class="read-more" href="wo-men-de-qian-duan-2015/">»</a></p>
+                </section>
+                <footer class="post-meta">
+                    <img class="author-thumb" src="http://www.gravatar.com/avatar/8ee493c6c288d18c24fd6994ccc969f0?s=250&amp;d=mm&amp;r=x" alt="mdemo" nopin="nopin">
+                    <a href="author/mdemo/">mdemo</a> on <a href="tag/gulp/">gulp</a>, <a href="tag/webpack/">webpack</a>, <a href="tag/node-js/">node.js</a>, <a href="tag/koa/">koa</a>, <a href="tag/css/">css</a>, <a href="tag/react-js/">react.js</a>, <a href="tag/css-modules/">css-modules</a>, <a href="tag/flux/">flux</a>, <a href="tag/redux-js/">redux.js</a>
+                    <time class="post-date" datetime="2015-09-17">17 September 2015</time>
+                </footer>
+            </article>
+            <article class="post tag-koa tag-node-js tag-co">
+                <header class="post-header">
+                    <h2 class="post-title"><a href="co-jin-jie-yong-fa/">co 进阶用法</a></h2>
+                </header>
+                <section class="post-excerpt">
+                    <p>1: co中数组的使用 map 传入的函数，也可以是个 generator。下面的代码解释如何处理 代码：array-co /** * co array */ var co = require('co'); var fs = require('mz/fs'); var paths = ['node_modules/co/', <a class="read-more" href="co-jin-jie-yong-fa/">»</a></p>
+                </section>
+                <footer class="post-meta">
+                    <img class="author-thumb" src="http://www.gravatar.com/avatar/8ee493c6c288d18c24fd6994ccc969f0?s=250&amp;d=mm&amp;r=x" alt="mdemo" nopin="nopin">
+                    <a href="author/mdemo/">mdemo</a> on <a href="tag/koa/">koa</a>, <a href="tag/node-js/">node.js</a>, <a href="tag/co/">co</a>
+                    <time class="post-date" datetime="2015-09-04">04 September 2015</time>
+                </footer>
+            </article>
+            <article class="post tag-css tag-webpack tag-react-js tag-css-modules">
+                <header class="post-header">
+                    <h2 class="post-title"><a href="tan-tan-css-modules/">谈谈 CSS Modules</a></h2>
+                </header>
+                <section class="post-excerpt">
+                    <p>最近几天由于这篇文章，让大家对 CSS Modules 有了很高的热情。我们团队已经使用 CSS Modules几个月了，所以在这里谈谈我们的经验。 我们的项目是使用React.js 开发，所以我们在开始开发的时候，为了能让我们的组件能够在多个项目中复用，我们开始调研单文件组件的写法，这期间看了React: CSS in JS，radium等内容，最终选择的方案是使用 radium 来写 css。 CSS in <a class="read-more" href="tan-tan-css-modules/">»</a></p>
+                </section>
+                <footer class="post-meta">
+                    <img class="author-thumb" src="http://www.gravatar.com/avatar/8ee493c6c288d18c24fd6994ccc969f0?s=250&amp;d=mm&amp;r=x" alt="mdemo" nopin="nopin">
+                    <a href="author/mdemo/">mdemo</a> on <a href="tag/css/">css</a>, <a href="tag/webpack/">webpack</a>, <a href="tag/react-js/">react.js</a>, <a href="tag/css-modules/">css-modules</a>
+                    <time class="post-date" datetime="2015-08-20">20 August 2015</time>
+                </footer>
+            </article>
+            <article class="post tag-react-js tag-flux tag-redux-js">
+                <header class="post-header">
+                    <h2 class="post-title"><a href="xue-xi-redux-liu-shui-zhang/">学习 redux.js 的 流水账</a></h2>
+                </header>
+                <section class="post-excerpt">
+                    <p>具体 redux 的使用请访问redux 本文主要是一个学习使用与源码的流水账，有点乱，多见谅。 有问题欢迎找我讨论，一起学习~ redux redux 是一个 Flux 架构的实现，react-europe 上的演讲可以看到很酷的功能(视频需翻墙) react 项目所有的代码都是可以 hot-reload，并且不丢失 state，这对于开发复杂的单页应用非常有帮助，基于大量 es6+ 特性开发,看源码也算是学习es6+ <a class="read-more" href="xue-xi-redux-liu-shui-zhang/">»</a></p>
+                </section>
+                <footer class="post-meta">
+                    <img class="author-thumb" src="http://www.gravatar.com/avatar/8ee493c6c288d18c24fd6994ccc969f0?s=250&amp;d=mm&amp;r=x" alt="mdemo" nopin="nopin">
+                    <a href="author/mdemo/">mdemo</a> on <a href="tag/react-js/">react.js</a>, <a href="tag/flux/">flux</a>, <a href="tag/redux-js/">redux.js</a>
+                    <time class="post-date" datetime="2015-07-23">23 July 2015</time>
+                </footer>
+            </article>
+            <nav class="pagination" role="navigation">
+                <span class="page-number">Page 1 of 3</span>
+                <a class="older-posts" href="page/2/">Older Posts →</a>
+            </nav>
+        </main>
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="./多栈开发_files/多栈开发.html">多栈开发</a> © 2015</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org/">Ghost</a></section>
+        </footer>
+    </div>
+    <script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+</body>
+
+</html>

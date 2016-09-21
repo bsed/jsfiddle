@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>jquery using mouse coordinates to offset 'tooltip' style hover function</title>
+    <style type="text/css">
+        #utilities {
+            cursor: pointer;
+        }
+        
+        #gas-electric-hover {
+            display: none;
+            background-color: #fff;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -khtml-border-radius: 10px;
+            border-radius: 10px;
+            -webkit-box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+            box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+            behavior: url(/PIE.php);
+            /* CSS3Pie hack for IE6/7/8 */
+            border: 2px solid #BBB;
+            width: 110px;
+            height: 110px;
+            color: #333;
+            font-family: 'FrutigerRegular';
+            position: absolute;
+            top: 180px;
+            left: 250px;
+            z-index: 10002;
+        }
+        
+        #gas-electric-hover img {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+        }
+    </style>
+    <script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
+</head>
+
+<body>
+    <div style="width:600px; height:600px; background:#DEDEDE;">
+        <div class="right-body" id="utilities" style="width:300px;">
+            <div class="red-sub-header">Lorem Ipsum</div>
+            <div class="text">dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</div>
+        </div>
+        <div id="gas-electric-hover">
+            <div style="height:20px; width:12px;">
+                <img src="/banking/media/images/speech-bubble-top.png" width="20" height="12" alt="" style="position: relative; top:-14px; left: 20px;" />
+            </div>
+            <img src="http://comps.canstockphoto.com/can-stock-photo_csp2525879.jpg" width="110" height="110" alt="Gas and Electric Suppliers logos" />
+        </div>
+    </div>
+
+
+    <div id="target">
+        <a href="#" class="target">Hover over me!</a>
+        <a href="#" class="target">Hover over me too!</a>
+    </div>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#utilities').mousemove(function(event) {
+                var left = event.pageX - $(this).offset().left + 100;
+                var top = event.pageY - $(this).offset().top + 130;
+                $('#gas-electric-hover').css({
+                    top: top,
+                    left: left
+                }).show();
+                console.log(left, top);
+            });
+            $('#utilities').mouseout(function() {
+                $('#gas-electric-hover').hide();
+            });
+          
+        });
+    </script>
+</body>
+
+</html>

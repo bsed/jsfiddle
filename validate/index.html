@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <title>javascript form validate</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="validate.js"></script>
+</head>
+
+<body>
+    <h1>原生javascript表单校验</h1>
+
+    <div id="content">
+        <h2>javascript 表单校验库 by CodeIgniter.</h2>
+        <h2 class="bm">无依赖, gzip下压缩仅仅 2kb, 支持自定义!</h2>
+        <div style="clear:both;"></div>
+
+        <h3><span>例子</span></h3>
+
+        <div class="success_box">下面的字段将被成功校验</div>
+        <div class="error_box"></div>
+
+        <form name="example_form"  method="POST">
+            <label for="req">Required field:</label>
+            <label for="alphanumeric">Alphanumeric field:</label>
+
+            <input name="req" id="req" />
+            <input name="alphanumeric" id="alphanumeric" />
+
+            <label for="password">Password:</label>
+            <label for="password_confirm">Password Confirmation (match password):</label>
+
+            <input name="password" id="password" type="password" />
+            <input name="password_confirm" id="password_confirm" type="password" />
+
+            <label for="email">Email:</label>
+            <label for="minlength">Min length field (min. 8 chars):</label>
+
+            <input name="email" id="email" />
+            <input name="minlength" id="minlength" />
+            
+            <label for="file">File:</label>
+
+            <input name="file" id="file" type="file"/>
+            
+            <label for="tos_checkbox">Required checkbox (example: Terms of Service)</label>
+            <input name="tos_checkbox" id="tos_checkbox" type="checkbox" />
+            
+            <button class="button gray" type="submit" name="submit">Submit</button>
+        </form>
+ 
+ <script type="text/javascript">
+  var validator = new validate('example_form', [{
+        name: 'req',
+        display: 'required',
+        rules: 'required'
+    }, {
+        name: 'alphanumeric',
+        rules: 'required|alpha_numeric'
+    }, {
+        name: 'password',
+        display: '密码',
+        rules: 'required'
+    }, {
+        name: 'password_confirm',
+        display: '确认密码',
+        rules: 'required|matches[password]'
+    }, {
+        name: 'email',
+        rules: 'valid_email'
+    }, {
+        name: 'minlength',
+        display: 'min length',
+        rules: 'min_length[8]'
+    },{
+       name: 'file',
+       display: '文件类型',
+       rules: 'is_file_type[jpg,png,jpeg,gif,excel,word]' 
+    }, {
+        names: ['fname', 'lname'],
+        rules: 'required|alpha'
+    }], function(errors) {
+        //console.info("error: " +errors[0].id+" "+errors[0].message);
+        for (var i=0;i<errors.length;i++) {
+               alert("error: "+errors[i].message);
+            }
+        if (errors.length > 0) {
+            // Show the errors
+            alert("222");
+        }
+    });
+ </script>
+</body>
+
+</html>

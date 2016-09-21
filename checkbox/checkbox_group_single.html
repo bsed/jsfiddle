@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>checkbox group single </title>
+
+</head>
+
+<body>
+    <input type="checkbox" class="radio" value="1" name="fooby[1][]" />
+    <input type="checkbox" class="radio" value="1" name="fooby[1][]" />
+    <input type="checkbox" class="radio" value="1" name="fooby[1][]" />
+    <input type="checkbox" class="radio" value="1" name="fooby[2][]" />
+    <input type="checkbox" class="radio" value="1" name="fooby[2][]" />
+    <input type="checkbox" class="radio" value="1" name="fooby[2][]" />
+
+    <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+        $("input:checkbox").change(function() {
+            var group = ":checkbox[name='" + $(this).attr("name") + "']";
+            if ($(this).is(':checked')) {
+                $(group).not($(this)).attr("checked", false);
+            }
+        });
+    </script>
+</body>
+
+</html>

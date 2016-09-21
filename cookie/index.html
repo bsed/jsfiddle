@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>jquery cookies and div style display block/none</title>
+</head>
+
+<body>
+    <div class="language">
+        <a href="javascript:language('english');" name="english">english</a>
+        <a href="javascript:language('spanish');" name="spanish">spanish</a>
+        <a href="javascript:language('german');" name="german">german</a>
+    </div>
+    <div name="lang" class="english" style="display:block;">content</div>
+    <div name="lang" class="spanish" style="display:none;">content</div>
+    <div name="lang" class="german" style="display:none;">content</div>
+
+    links: http://stackoverflow.com/questions/10201145/jquery-cookies-and-div-style-display-block-none
+
+    <script type="text/javascript" src="./js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.cookie.js"></script>
+    <script type="text/javascript">
+        function language(chosenlanguage) {
+            $('div[name|="lang"]').each(function(index) {
+                if ($(this).attr("class") == chosenlanguage) {
+                    $(this).show(0);
+                } else {
+                    $(this).hide(0);
+                }
+            });
+        }
+
+        $(".language a").click(function() {
+            var clicked = this;
+            $('div[name|="lang"]').each(function(index) {
+                if ($(this).hasClass($(clicked).attr("name"))) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+            $.cookie("language", $(clicked).attr('name'), {
+                expires: 365,
+                path: '/'
+            });
+        });
+    </script>
+</body>
+
+</html>

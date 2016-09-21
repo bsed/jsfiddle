@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre>
+        $('input:checkbox').on("change",function(){
+		$("input:checkbox").not($(this)).prop('checked',false);
+	});
+    </pre>
+    <pre>
+        /* $('input[id^="rule-"]').on('change',function(e){
+		var ss= $('input[id^="rule"]').val();;
+		return false;
+	}); */
+	/* function get_data(){
+		var getdata = $('input[id^="rule"]').val();
+		return false;
+	} */
+    </pre>
+    <input type="checkbox" name="foo" />
+    <input type="checkbox" name="foo" />
+    <input type="checkbox" name="foo" />
+    <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+        $(':checkbox').on('change', function() {
+            var th = $(this),
+                name = th.prop('name');
+            if (th.is(':checked')) {
+                $(':checkbox[name="' + name + '"]').not($(this)).prop('checked', false);
+            }
+        });
+    </script>
+</body>
+
+</html>
